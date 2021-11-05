@@ -8,7 +8,7 @@ const Exercise: FC = (props) => {
         <label>Exercise</label>
         <TextInput style={textInputStyles.input}></TextInput>
       </View>
-      <View style={{ flex: 3 }}>
+      <View style={{ flex: 2 }}>
         <label>Weight</label>
         <TextInput style={textInputStyles.input}></TextInput>
       </View>
@@ -35,8 +35,12 @@ const textInputStyles = StyleSheet.create({
   input: {
     borderRadius: 30,
     backgroundColor: "#777B97",
-    height: "3em",
+    color: "#fff",
+    height: 60,
+    fontSize: 30,
     marginTop: "5px",
+    paddingLeft: "15px",
+    paddingRight: "15px",
   },
 });
 
