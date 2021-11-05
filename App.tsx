@@ -6,7 +6,6 @@ import Exercise from './src/components/exercise';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
       <Exercise></Exercise>
     </View>
@@ -15,9 +14,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: 'flex-start',
+    backgroundColor: '#404460',
+    display: 'flex',
+    flexDirection: 'row',
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    padding: "1em",
+    fontSize: 20
   },
 });
