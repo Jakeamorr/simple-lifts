@@ -1,20 +1,30 @@
-import React, { FC } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import React from "react";
+import { StyleSheet, TextInput, View } from "react-native";
+import { IExerciseProps } from "../types/IExercise";
 
-const Exercise: FC = (props) => {
+const Exercise = (props: IExerciseProps) => {
   return (
     <View style={mainContainerStyle.input}>
       <View style={{ flex: 4 }}>
         <label>Exercise</label>
-        <TextInput style={textInputStyles.input}></TextInput>
+        <TextInput
+          style={textInputStyles.input}
+          value={props.exercise.name}
+        ></TextInput>
       </View>
       <View style={{ flex: 2 }}>
         <label>Weight</label>
-        <TextInput style={textInputStyles.input}></TextInput>
+        <TextInput
+          style={textInputStyles.input}
+          value={props.exercise.weight.toString()}
+        ></TextInput>
       </View>
       <View style={{ flex: 1 }}>
         <label>Reps</label>
-        <TextInput style={textInputStyles.input}></TextInput>
+        <TextInput
+          style={textInputStyles.input}
+          value={props.exercise.reps.toString()}
+        ></TextInput>
       </View>
     </View>
   );
@@ -28,6 +38,7 @@ const mainContainerStyle = StyleSheet.create({
     flexDirection: "row",
     gap: "1em",
     justifyContent: "space-between",
+    margin: "1em",
   },
 });
 
