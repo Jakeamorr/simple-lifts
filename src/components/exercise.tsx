@@ -1,29 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { IExerciseProps } from "../types/IExercise";
 
 const Exercise = (props: IExerciseProps) => {
+  const [name, setName] = useState(props.exercise.name);
+  const [weight, setWeight] = useState(props.exercise.weight);
+  const [reps, setReps] = useState(props.exercise.reps);
   return (
     <View style={mainContainerStyle.input}>
       <View style={{ flex: 4 }}>
         <label>Exercise</label>
         <TextInput
           style={textInputStyles.input}
-          value={props.exercise.name}
+          value={name}
+          onChangeText={(val) => setName(val)}
         ></TextInput>
       </View>
       <View style={{ flex: 2 }}>
         <label>Weight</label>
         <TextInput
           style={textInputStyles.input}
-          value={props.exercise.weight.toString()}
+          value={weight.toString()}
         ></TextInput>
       </View>
       <View style={{ flex: 1 }}>
         <label>Reps</label>
         <TextInput
           style={textInputStyles.input}
-          value={props.exercise.reps.toString()}
+          value={reps.toString()}
         ></TextInput>
       </View>
     </View>
